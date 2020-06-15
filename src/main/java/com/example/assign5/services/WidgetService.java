@@ -15,18 +15,8 @@ public class WidgetService {
 
     List<Widget> widgets = new ArrayList<Widget>();
     {
-        widgets.add(new Widget(123, "Widget 1", "HEADING", 0, "Hello", 
-                    "#", 3, 730, 100, "/styles", 
-                    "background-color", "New Heading"));
-        widgets.add(new Widget(234, "Widget 2", "PARAGRAPH", 1, "My Thesis",
-                    "#", 1, 730, 100, "/styles",
-                    "color", "New Paragraph"));
-        widgets.add(new Widget(345, "Widget 3", "YOUTUBE", 2, "Video",
-                    "#", 0, 730, 100, "/styles",
-                    "color", "New Video"));
-        widgets.add(new Widget(432, "Widget 4", "IMAGE", 3, "Photo",
-                    "#", 0, 730, 100, "/styles",
-                    "color", "New Image"));
+        widgets.add(new Widget(123, "Widget 1", "HEADING", "Hello", 3));
+        widgets.add(new Widget(234, "Widget 2", "PARAGRAPH", "My Thesis", 1));
     }
     public List<Widget> findWidgetsForTopic(String tid) {
         return (List<Widget>)repository.findAll();
