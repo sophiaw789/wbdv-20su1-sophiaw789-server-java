@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <!--Added this viewport meta tag so that the website is responsive on mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>User Admin</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="../styles/styles.css" rel="stylesheet" />
+    <link href="user-admin.style.client.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../services/user.service.client.js"></script>
+    <script src="user-admin.controller.client.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>User Admin</h1>
+
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Role</th>
+                        <th>&nbsp;</th>
+                    </tr>
+
+                    <tr class="wbdv-form">
+                        <td><input class="form-control wbdv-username-fld" placeholder="Username"/></td>
+                        <td><input class="form-control wbdv-password-fld" placeholder="Password" type="password"/></td>
+                        <td><input class="form-control wbdv-first-name-fld" placeholder="First Name"/></td>
+                        <td><input class="form-control wbdv-last-name-fld" placeholder="Last Name"/></td>
+                        <td><select class="form-control wbdv-role-fld">
+                                <option value="FACULTY">Faculty</option>
+                                <option value="STUDENT">Student</option>
+                                <option value="ADMIN">Admin</option>
+                            </select></td>
+                        <td><span class="float-right" style="white-space: nowrap">
+                                <i class="fa-2x fa fa-search wbdv-search"></i>
+                                <i class="fa-2x fa fa-plus wbdv-add"></i>
+                                <i class="fa-2x fa fa-check wbdv-update"></i>
+                            </span></td>
+                    </tr>
+
+                    <tr class="wbdv-template wbdv-user wbdv-hidden">
+                        <td class="wbdv-username">ada</td>
+                        <td>&nbsp;</td>
+                        <td class="wbdv-first-name">Ada</td>
+                        <td class="wbdv-last-name">Lovelace</td>
+                        <td class="wbdv-role">FACULTY</td>
+                        <td class="wbdv-actions">
+                            <span class="float-right">
+                                <i class="fa-2x fa fa-times wbdv-delete"></i>
+                                <i class="fa-2x fa fa-pencil wbdv-edit"></i>
+                            </span>
+                        </td>
+                    </tr>
+                </thead>
+
+                <tbody class="wbdv-tbody">
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

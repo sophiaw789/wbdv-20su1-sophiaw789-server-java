@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!--Added this viewport meta tag so that the website is responsive on mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Course Editor</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../styles/styles.css" rel="stylesheet" />
+
+    <link href="../courses/course-editor.style.client.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand wbdv-label wbdv-course-manager" href="#">CS4550 - WebDev</a>
+                <button class="navbar-toggler wbdv wbdv-hamburger" type="button" data-toggle="collapse"
+                    data-target="#navbarNavDropdown">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Lesson 1</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Lesson 2</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Lesson 3</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Lesson 4</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Lesson 5</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Lesson 6</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Lesson 7</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Lesson 8</a></li>
+                    </ul>
+
+                    <button class="btn btn-lg">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="row">
+            <div class="col-4 module">
+                <div class="mt-sm-4">
+                    <ul class="list-group">
+                        <li class="list-group-item active">
+                            <button class="btn float-right btn-sm">
+                                X</i></button>
+                            Module 1</li>
+                        <li class="list-group-item">
+                            <button class="btn float-right btn-sm">
+                                X</i></button>
+                            Module 2</li>
+                        <li class="list-group-item">
+                            <button class="btn float-right btn-sm">
+                                X</i></button>
+                            Module 3</li>
+                        <li class="list-group-item">
+                            <button class="btn float-right btn-sm">
+                                X</i></button>
+                            Module 4</li>
+                        <li class="list-group-item">
+                            <button class="btn float-right btn-sm">
+                                X</i></button>
+                            Module 5</li>
+                        <li class="list-group-item">
+                            <button class="btn float-right btn-sm">
+                                X</i></button>
+                            Module 6</li>
+                        <li class="list-group-item">
+                            <button class="btn float-right btn-sm">
+                                X</i></button>
+                            Module 7</li>
+                    </ul>
+                </div>
+                <button class="btn float-right">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+
+            <div class="col-8 topics">
+                <div class="mt-sm-4">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item topic-number mr-sm-2">
+                            <a class="nav-link" href="#">Topic 1</a>
+                        </li>
+                        <li class="nav-item topic-number mr-sm-2">
+                            <a class="nav-link" href="#">Topic 2</a>
+                        </li>
+                        <li class="nav-item topic-number mr-sm-2">
+                            <a class="nav-link" href="#">Topic 3</a>
+                        </li>
+                        <li class="nav-item topic-number mr-sm-2">
+                            <a class="nav-link" href="#">Topic 4</a>
+                        </li>
+                        <li class="nav-item topic-number mr-sm-2">
+                            <button class="btn btn-md">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-sm-4 heading-widget">
+                    <label class="col-form-label" for="widget">Heading Widget</label>
+                    <div>
+                        <input id="widgetFld" class="form-control" type="text" placeholder="Heading text" />
+                    </div>
+                    <div class="mt-sm-4">
+                        <select id="widgetFld" class="form-control wbdv-field wbdv-widget">
+                            <option value="heading1">Heading 1</option>
+                            <option value="heading2">Heading 2</option>
+                            <option value="heading3">Heading 3</option>
+                        </select>
+                    </div>
+                    <div class="mt-sm-4">
+                        <input id="widgetFld" class="form-control" type="text" placeholder="Widget name" />
+                    </div>
+                    <label class="col-form-label mt-sm-4" for="widget">Preview</label>
+                    <h1>Heading text</h1>
+                </div>
+
+                <button class="btn btn-danger float-right btn-sm mt-sm-4 mb-sm-4">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

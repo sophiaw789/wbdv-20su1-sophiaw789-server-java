@@ -1,0 +1,29 @@
+.module {
+    background-color: lightgrey;
+}
+
+.topics {
+    background-color: silver;
+}
+
+.topic-number {
+    background-color: white;
+    color: black;
+}
+
+.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.nav-link {
+    color: black;
+}
+
+.heading-widget {
+    border-color: white;
+}
+
+body {
+    padding-top: 65px;
+}

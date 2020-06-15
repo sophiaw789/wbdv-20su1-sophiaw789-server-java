@@ -1,0 +1,13 @@
+body {
+    padding-top: 65px;
+    background-color: lightgrey;
+}
+
+.navbar-dark .navbar-toggler {
+    border-color: #343a40;
+}
+
+tr.grey td {
+    background: white;
+    color: black;
+}
