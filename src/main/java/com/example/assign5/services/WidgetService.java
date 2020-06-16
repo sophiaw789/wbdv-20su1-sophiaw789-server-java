@@ -56,7 +56,7 @@ public class WidgetService {
         newWidget.setId(widgets.size() * 20 + 21);
         this.widgets.add(newWidget);
         return newWidget;
-    }
+    } 
 
     public Widget updateWidget(Integer widgetId, Widget updatedWidget) {
         for (int i = 0; i < widgets.size(); i++) {
