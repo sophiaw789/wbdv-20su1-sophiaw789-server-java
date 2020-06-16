@@ -52,7 +52,7 @@ public class WidgetService {
      * newWidget.setId(widgets.size() * 20); this.widgets.add(newWidget); return
      * newWidget; }
      */
-    public Widget createWidget(String tid, Widget newWidget) {
+    public Widget createWidget(Widget newWidget) {
         newWidget.setId(widgets.size() * 20);
         this.widgets.add(newWidget);
         return newWidget;
