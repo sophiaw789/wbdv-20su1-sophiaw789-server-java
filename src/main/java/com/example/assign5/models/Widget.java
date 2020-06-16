@@ -6,27 +6,30 @@ public class Widget {
     private String type;
     private String text;
     private Integer size;
+    private Integer widgetOrder;
     private String topicId;
 
     public Widget() {
     }
 
     public Widget(Integer id, String name, String type, 
-                    String text, Integer size) {
+                    String text, Integer size, Integer widgetOrder) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.text = text;
         this.size = size;
+        this.widgetOrder = widgetOrder;
     }
 
     public Widget(Integer id, String name, String type, 
-                    String text, Integer size, String topicId) {
+                    String text, Integer size, Integer widgetOrder, String topicId) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.text = text;
         this.size = size;
+        this.widgetOrder = widgetOrder;
         this.topicId = topicId;
     }
 
@@ -76,5 +79,13 @@ public class Widget {
 
     public void setSize(Integer size) {
         this.size = size;
+    }
+
+    public Integer getWidgetOrder() {
+        return widgetOrder;
+    }
+
+    public void setWidgetOrder(Integer widgetOrder) {
+        this.widgetOrder = widgetOrder;
     }
 }
