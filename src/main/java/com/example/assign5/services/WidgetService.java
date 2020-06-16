@@ -53,7 +53,7 @@ public class WidgetService {
      * newWidget; }
      */
     public Widget createWidget(Widget newWidget) {
-        newWidget.setId(widgets.size() * 20);
+        newWidget.setId(widgets.size() * 20 + 21);
         this.widgets.add(newWidget);
         return newWidget;
     }
