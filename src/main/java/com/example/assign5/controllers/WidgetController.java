@@ -49,9 +49,9 @@ public class WidgetController {
 
     @GetMapping("/api/widgets/{wid}")
     public Widget findWidgetById(
-            @PathVariable("wid") Integer wid) {
-        return widgetService.findWidgetById(wid);
-    }
+        @PathVariable("wid") Integer wid) {
+            return widgetService.findWidgetById(wid);
+        }
 
     @DeleteMapping("/api/widgets/{wid}")
     public List<Widget> deleteWidget(
