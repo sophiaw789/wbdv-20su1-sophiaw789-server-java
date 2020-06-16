@@ -8,10 +8,8 @@ import java.util.List;
 
 @Service
 public class WidgetService {
-
     List<Widget> widgets = new ArrayList<Widget>();
-    {
-    }
+    {}
 
     public List<Widget> findWidgetsForTopic(String tid) {
         List<Widget> result = new ArrayList<Widget>();

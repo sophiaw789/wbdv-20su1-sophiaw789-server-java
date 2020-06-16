@@ -20,10 +20,13 @@ public class Widget {
         this.size = size;
     }
 
-    public Widget(Integer id, String name, String type, String topicId) {
+    public Widget(Integer id, String name, String type, 
+                    String text, Integer size, String topicId) {
         this.id = id;
         this.name = name;
         this.type = type;
+        this.text = text;
+        this.size = size;
         this.topicId = topicId;
     }
 
