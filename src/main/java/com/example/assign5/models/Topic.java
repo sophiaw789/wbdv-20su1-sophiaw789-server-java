@@ -1,5 +1,6 @@
 package com.example.assign5.models;
 
+/*
 import javax.persistence.*;
 import java.util.List;
 
@@ -47,3 +48,4 @@ public class Topic {
         this.widgets = widgets;
     }
 }
+*/

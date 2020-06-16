@@ -1,31 +1,12 @@
 package com.example.assign5.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import javax.persistence.*;
-
-@Entity
-@Table(name = "widgets")
 public class Widget {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String type;
     private String text;
     private Integer size;
-
-    @ManyToOne
-    @JsonIgnore
-    private Topic topic;
-
-    public Topic getTopic() {
-        return topic;
-    }
-
-    public void setTopic(Topic topic) {
-        this.topic = topic;
-    }
+    private String topicId;
 
     public Widget() {
     }
@@ -37,6 +18,21 @@ public class Widget {
         this.type = type;
         this.text = text;
         this.size = size;
+    }
+
+    public Widget(Integer id, String name, String type, String topicId) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.topicId = topicId;
+    }
+
+    public String getTopicId() {
+        return topicId;
+    }
+
+    public void setTopicId(String topicId) {
+        this.topicId = topicId;
     }
 
     public Integer getId() {

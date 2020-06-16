@@ -5,41 +5,31 @@ import com.example.assign5.services.WidgetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-//import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*")
 public class WidgetController {
-        /*
-    CRUD
-    C - Create - done
-    R - Read - done
-    U - Update - done
-    D - Delete - done
+    /*
+     * CRUD C - Create - done R - Read - done U - Update - done D - Delete - done
      */
 
     @Autowired
     WidgetService widgetService;
 
     @PutMapping("/api/widgets/{wid}")
-    public Widget updateWidget(
-            @PathVariable("wid") Integer widgetId,
-            @RequestBody Widget updatedWidget) {
+    public Widget updateWidget(@PathVariable("wid") Integer widgetId, @RequestBody Widget updatedWidget) {
         return widgetService.updateWidget(widgetId, updatedWidget);
     }
 
     /*
     @PostMapping("/api/widgets")
-    public Widget createStandAloneWidget(
-            @RequestBody Widget newWidget) {
+    public Widget createStandAloneWidget(@RequestBody Widget newWidget) {
         return widgetService.createStandAloneWidget(newWidget);
     }
-*/
+
+    */
     @PostMapping("/api/topics/{tid}/widgets")
-    public Widget createWidget(
-            @PathVariable("tid") String topicId,
-            @RequestBody Widget newWidget) {
+    public Widget createWidget(@PathVariable("tid") String topicId, @RequestBody Widget newWidget) {
         return widgetService.createWidget(topicId, newWidget);
     }
 
@@ -49,20 +39,17 @@ public class WidgetController {
     }
 
     @GetMapping("/api/widgets/{wid}")
-    public Widget findWidgetById(
-        @PathVariable("wid") Integer wid) {
-            return widgetService.findWidgetById(wid);
-        }
+    public Widget findWidgetById(@PathVariable("wid") Integer wid) {
+        return widgetService.findWidgetById(wid);
+    }
 
     @DeleteMapping("/api/widgets/{wid}")
-    public List<Widget> deleteWidget(
-            @PathVariable("wid") Integer wid) {
+    public List<Widget> deleteWidget(@PathVariable("wid") Integer wid) {
         return widgetService.deleteWidget(wid);
     }
 
     @GetMapping("/api/topics/{tid}/widgets")
-    public List<Widget> findWidgetsForTopic(
-            @PathVariable("tid") String tid) {
+    public List<Widget> findWidgetsForTopic(@PathVariable("tid") String tid) {
         return widgetService.findWidgetsForTopic(tid);
     }
 }

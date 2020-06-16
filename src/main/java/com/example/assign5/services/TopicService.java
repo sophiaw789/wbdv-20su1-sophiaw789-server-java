@@ -1,3 +1,4 @@
+/*
 package com.example.assign5.services;
 
 import com.example.assign5.models.Topic;
@@ -17,7 +18,7 @@ public class TopicService {
     public void deleteTopic() {}
     public List<Topic> findAllTopics() {
         return repository.findAllTopics();
-//        return (List<Topic>)repository.findAll();
+        //return (List<Topic>)repository.findAll();
     }
 
     public Topic findTopicById(Integer tid) {
@@ -33,3 +34,4 @@ public class TopicService {
         return repository.findTopicsForLesson(lessonId);
     }
 }
+*/
