@@ -53,13 +53,13 @@ public class WidgetService {
         this.widgets = result;
         return result;
     }
-
+/*
     public Widget createStandAloneWidget(Widget newWidget) {
         newWidget.setId(widgets.size() * 20);
         this.widgets.add(newWidget);
         return newWidget;
     }
-
+*/
     public Widget createWidget(String tid, Widget newWidget) {
         newWidget.setId(widgets.size() * 20);
         this.widgets.add(newWidget);

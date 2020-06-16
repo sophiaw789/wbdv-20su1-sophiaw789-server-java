@@ -29,12 +29,13 @@ public class WidgetController {
         return widgetService.updateWidget(widgetId, updatedWidget);
     }
 
+    /*
     @PostMapping("/api/widgets")
     public Widget createStandAloneWidget(
             @RequestBody Widget newWidget) {
         return widgetService.createStandAloneWidget(newWidget);
     }
-
+*/
     @PostMapping("/api/topics/{tid}/widgets")
     public Widget createWidget(
             @PathVariable("tid") String topicId,
