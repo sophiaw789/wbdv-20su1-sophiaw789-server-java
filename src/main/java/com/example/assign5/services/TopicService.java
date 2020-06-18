@@ -1,4 +1,3 @@
-/*
 package com.example.assign5.services;
 
 import com.example.assign5.models.Topic;
@@ -14,24 +13,27 @@ public class TopicService {
     @Autowired
     TopicRepository repository;
 
-    public void createTopic() {}
-    public void deleteTopic() {}
+    public void createTopic() {
+    }
+
+    public void deleteTopic() {
+    }
+
     public List<Topic> findAllTopics() {
         return repository.findAllTopics();
-        //return (List<Topic>)repository.findAll();
+        // return (List<Topic>)repository.findAll();
     }
 
     public Topic findTopicById(Integer tid) {
         return repository.findTopicById(tid);
-//        Optional<Topic> optional = repository.findById(tid);
-//        if(optional.isPresent()) {
-//            return optional.get();
-//        }
-//        return null;
+        // Optional<Topic> optional = repository.findById(tid);
+        // if(optional.isPresent()) {
+        // return optional.get();
+        // }
+        // return null;
     }
 
     public List<Topic> findTopicsForLesson(String lessonId) {
         return repository.findTopicsForLesson(lessonId);
     }
 }
-*/

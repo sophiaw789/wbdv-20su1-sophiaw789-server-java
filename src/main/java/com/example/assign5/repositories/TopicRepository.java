@@ -1,4 +1,3 @@
-/*
 package com.example.assign5.repositories;
 
 import com.example.assign5.models.Topic;
@@ -19,4 +18,3 @@ public interface TopicRepository extends CrudRepository<Topic, Integer> {
         @Query("SELECT topic FROM Topic topic WHERE topic.lesson = :lessonId")
         List<Topic> findTopicsForLesson(@Param("lessonId") String lessonId);
 }
-*/
