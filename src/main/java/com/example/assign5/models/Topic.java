@@ -1,5 +1,6 @@
 package com.example.assign5.models;
 
+/*
 import javax.persistence.*;
 import java.util.List;
 
@@ -10,7 +11,6 @@ public class Topic {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String title;
-    // stores the _id of the lesson instance in generic server
     private String lesson;
 
     @OneToMany(mappedBy = "topic")
@@ -48,3 +48,4 @@ public class Topic {
         this.widgets = widgets;
     }
 }
+*/
