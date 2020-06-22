@@ -1,6 +1,5 @@
 package com.example.assign5.models;
 
-/*
 import javax.persistence.*;
 import java.util.List;
 
@@ -11,10 +10,19 @@ public class Topic {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String title;
-    private String lesson;
+    private String description;
+    private String lessonId; // stores the _id of the lesson instance in generic server
 
     @OneToMany(mappedBy = "topic")
     private List<Widget> widgets;
+
+    public void set(Topic topic) {
+        this.id = topic.id;
+        this.title = topic.title;
+        this.description = topic.description;
+        this.lessonId = topic.lessonId;
+        this.widgets = topic.widgets;
+    }
 
     public Integer getId() {
         return id;
@@ -22,6 +30,22 @@ public class Topic {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getLessonId() {
+        return lessonId;
+    }
+
+    public void setLessonId(String lessonId) {
+        this.lessonId = lessonId;
     }
 
     public String getTitle() {
@@ -32,14 +56,6 @@ public class Topic {
         this.title = title;
     }
 
-    public String getLesson() {
-        return lesson;
-    }
-
-    public void setLesson(String lesson) {
-        this.lesson = lesson;
-    }
-
     public List<Widget> getWidgets() {
         return widgets;
     }
@@ -48,4 +64,3 @@ public class Topic {
         this.widgets = widgets;
     }
 }
-*/

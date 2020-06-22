@@ -1,11 +1,12 @@
-/*package com.example.assign5.controllers;
+package com.example.assign5.controllers;
 
 import com.example.assign5.models.Topic;
 import com.example.assign5.services.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -16,13 +17,20 @@ public class TopicController {
     @Autowired
     TopicService service;
 
-    public void createTopic() {
+    @PostMapping("/api/lessons/{lessonId}/topics")
+    public Topic createTopic(@PathVariable("lessonId") String lid, 
+        @RequestBody Topic newTopic) {
+        return service.createTopic(lid, newTopic);
     }
 
-    public void deleteTopic() {
+    @DeleteMapping("/api/topics/{tid}")
+    public int deleteTopic(@PathVariable("tid") Integer tid) {
+        return service.deleteTopic(tid);
     }
 
-    public void updateTopic() {
+    @PutMapping("/api/topics/{tid}")
+    public int updateTopic(@PathVariable("tid") Integer tid, @RequestBody Topic updateTopic) {
+        return service.updateTopic(tid, updateTopic);
     }
 
     @GetMapping("/api/topics")
@@ -40,4 +48,3 @@ public class TopicController {
         return service.findTopicsForLesson(lessonId);
     }
 }
-*/

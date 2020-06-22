@@ -1,4 +1,3 @@
-/*
 package com.example.assign5.services;
 
 import com.example.assign5.models.Topic;
@@ -14,8 +13,31 @@ public class TopicService {
     @Autowired
     TopicRepository repository;
 
-    public void createTopic() {}
-    public void deleteTopic() {}
+    public Topic createTopic(String lid, Topic topic) {
+        topic.setLessonId(lid);
+        return repository.save(topic);
+    }
+
+    public int deleteTopic(int tid) {
+        try {
+            repository.deleteById(tid);
+        } catch (Exception e) {
+            return 0;
+        }
+        return 1;
+    }
+
+    public int updateTopic(int tid, Topic updateTopic) {
+        Topic topic = repository.findTopicById(tid);
+        topic.set(updateTopic);
+        try {
+            repository.save(topic);
+        } catch (Exception e) {
+            return 0;
+        }
+        return 1;
+    }
+
     public List<Topic> findAllTopics() {
         return repository.findAllTopics();
         //return (List<Topic>)repository.findAll();
@@ -34,4 +56,3 @@ public class TopicService {
         return repository.findTopicsForLesson(lessonId);
     }
 }
-*/

@@ -1,6 +1,8 @@
 package com.example.assign5.controllers;
 
+import com.example.assign5.models.Topic;
 import com.example.assign5.models.Widget;
+import com.example.assign5.services.TopicService;
 import com.example.assign5.services.WidgetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,9 +18,10 @@ public class WidgetController {
 
     @Autowired
     WidgetService widgetService;
+    TopicService topicService;
 
     @PutMapping("/api/widgets/{wid}")
-    public Widget updateWidget(@PathVariable("wid") Integer widgetId, @RequestBody Widget updatedWidget) {
+    public int updateWidget(@PathVariable("wid") Integer widgetId, @RequestBody Widget updatedWidget) {
         return widgetService.updateWidget(widgetId, updatedWidget);
     }
 
@@ -28,9 +31,10 @@ public class WidgetController {
      * widgetService.createStandAloneWidget(newWidget); }
      */
     @PostMapping("/api/topics/{tid}/widgets")
-    public Widget createWidget(@PathVariable("tid") String topicId, @RequestBody Widget newWidget) {
-        newWidget.setTopicId(topicId);
-        return widgetService.createWidget(newWidget);
+    public Widget createWidget(@PathVariable("tid") Integer topicId, @RequestBody Widget newWidget) {
+        Topic topic = topicService.findTopicById(topicId);
+        newWidget.setTopic(topic);
+        return widgetService.createWidget(topicId, newWidget);
     }
 
     @GetMapping("/api/widgets")
@@ -44,12 +48,12 @@ public class WidgetController {
     }
 
     @DeleteMapping("/api/widgets/{wid}")
-    public List<Widget> deleteWidget(@PathVariable("wid") Integer wid) {
+    public int deleteWidget(@PathVariable("wid") Integer wid) {
         return widgetService.deleteWidget(wid);
     }
 
     @GetMapping("/api/topics/{tid}/widgets")
-    public List<Widget> findWidgetsForTopic(@PathVariable("tid") String tid) {
+    public List<Widget> findWidgetsForTopic(@PathVariable("tid") Integer tid) {
         return widgetService.findWidgetsForTopic(tid);
     }
 }
