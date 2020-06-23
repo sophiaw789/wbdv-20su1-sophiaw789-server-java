@@ -14,6 +14,7 @@ public class WidgetService {
 
     @Autowired
     WidgetRepository repository;
+    @Autowired
     TopicRepository topicRepository;
 
     List<Widget> widgets = new ArrayList<Widget>();

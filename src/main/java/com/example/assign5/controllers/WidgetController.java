@@ -22,14 +22,13 @@ public class WidgetController {
         return widgetService.updateWidget(widgetId, updatedWidget);
     }
 
-    /*
-     * @PostMapping("/api/widgets") public Widget
-     * createStandAloneWidget(@RequestBody Widget newWidget) { return
-     * widgetService.createStandAloneWidget(newWidget); }
-     */
+    @PostMapping("/api/widgets")
+    public Widget createStandaloneWidget(@RequestBody Widget newWidget) {
+        return widgetService.createWidget(1, newWidget);
+    }
+
     @PostMapping("/api/topics/{tid}/widgets")
-    public Widget createWidget(@PathVariable("tid") Integer topicId, 
-    @RequestBody Widget newWidget) {
+    public Widget createWidget(@PathVariable("tid") Integer topicId, @RequestBody Widget newWidget) {
         return widgetService.createWidget(topicId, newWidget);
     }
 
@@ -38,18 +37,18 @@ public class WidgetController {
         return widgetService.findAllWidgets();
     }
 
-    @GetMapping("/api/widgets/{wid}")
-    public Widget findWidgetById(@PathVariable("wid") Integer wid) {
+    @GetMapping("/api/widgets/{widgetId}")
+    public Widget findWidgetById(@PathVariable("widgetId") Integer wid) {
         return widgetService.findWidgetById(wid);
     }
 
-    @DeleteMapping("/api/widgets/{wid}")
-    public int deleteWidget(@PathVariable("wid") Integer wid) {
+    @DeleteMapping("/api/widgets/{widgetId}")
+    public int deleteWidget(@PathVariable("widgetId") Integer wid) {
         return widgetService.deleteWidget(wid);
     }
 
-    @GetMapping("/api/topics/{tid}/widgets")
-    public List<Widget> findWidgetsForTopic(@PathVariable("tid") Integer tid) {
+    @GetMapping("/api/topics/{topicId}/widgets")
+    public List<Widget> findWidgetsForTopic(@PathVariable("topicId") Integer tid) {
         return widgetService.findWidgetsForTopic(tid);
     }
 }
