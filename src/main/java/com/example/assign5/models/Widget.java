@@ -31,7 +31,8 @@ public class Widget {
         this.widgetOrder = widget.widgetOrder;
         this.url = widget.url;
         this.width = widget.width;
-        this.height = widget.height;    
+        this.height = widget.height;
+        this.topic = widget.topic;    
     }
 
     public Topic getTopic() {

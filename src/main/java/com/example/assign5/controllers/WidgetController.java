@@ -1,8 +1,6 @@
 package com.example.assign5.controllers;
 
-import com.example.assign5.models.Topic;
 import com.example.assign5.models.Widget;
-import com.example.assign5.services.TopicService;
 import com.example.assign5.services.WidgetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +16,6 @@ public class WidgetController {
 
     @Autowired
     WidgetService widgetService;
-    TopicService topicService;
 
     @PutMapping("/api/widgets/{wid}")
     public int updateWidget(@PathVariable("wid") Integer widgetId, @RequestBody Widget updatedWidget) {
@@ -32,8 +29,6 @@ public class WidgetController {
      */
     @PostMapping("/api/topics/{tid}/widgets")
     public Widget createWidget(@PathVariable("tid") Integer topicId, @RequestBody Widget newWidget) {
-        Topic topic = topicService.findTopicById(topicId);
-        newWidget.setTopic(topic);
         return widgetService.createWidget(topicId, newWidget);
     }
 

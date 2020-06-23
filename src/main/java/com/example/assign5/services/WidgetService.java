@@ -13,10 +13,10 @@ import java.util.List;
 public class WidgetService {
 
     @Autowired
-    TopicRepository topicRepository;
-
-    @Autowired
     WidgetRepository repository;
+    TopicRepository topicRepository;
+    TopicService topicService;
+
 
     List<Widget> widgets = new ArrayList<Widget>();
     {
@@ -48,8 +48,10 @@ public class WidgetService {
      * newWidget.setId(widgets.size() * 20); this.widgets.add(newWidget); return
      * newWidget; }
      */
-    
+
     public Widget createWidget(Integer tid, Widget newWidget) {
+        Topic topic = topicService.findTopicById(tid);
+        newWidget.setTopic(topic);
         return repository.save(newWidget);
     }
 
