@@ -24,7 +24,6 @@ public class Widget {
     private Topic topic;
 
     public void set(Widget widget) {
-        this.id = widget.id;
         this.name = widget.name;
         this.type = widget.type;
         this.text = widget.text;
