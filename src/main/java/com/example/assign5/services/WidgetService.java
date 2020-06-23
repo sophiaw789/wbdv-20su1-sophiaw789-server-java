@@ -14,6 +14,7 @@ public class WidgetService {
 
     @Autowired
     WidgetRepository repository;
+
     @Autowired
     TopicRepository topicRepository;
 
@@ -52,7 +53,9 @@ public class WidgetService {
 
     public int updateWidget(Integer widgetId, Widget updatedWidget) {
         Widget widget = repository.findWidgetById(widgetId);
+        Topic topic = topicRepository.findTopicById(widget.getTopic().getId());
         widget.set(updatedWidget);
+        widget.setTopic(topic);
         try {
             repository.save(widget);
         } catch (Exception e) {
