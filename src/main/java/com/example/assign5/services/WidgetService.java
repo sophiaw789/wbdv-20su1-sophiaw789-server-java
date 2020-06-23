@@ -49,10 +49,15 @@ public class WidgetService {
      * newWidget; }
      */
 
-    public Widget createWidget(Integer tid, Widget newWidget) {
+    public int createWidget(Integer tid, Widget newWidget) {
         Topic topic = topicService.findTopicById(tid);
         newWidget.setTopic(topic);
-        return repository.save(newWidget);
+        try {
+            repository.save(newWidget);
+        } catch (Exception e) {
+            return 0;
+        }
+        return 1;
     }
 
     public int updateWidget(Integer widgetId, Widget updatedWidget) {

@@ -28,7 +28,8 @@ public class WidgetController {
      * widgetService.createStandAloneWidget(newWidget); }
      */
     @PostMapping("/api/topics/{tid}/widgets")
-    public Widget createWidget(@PathVariable("tid") Integer topicId, @RequestBody Widget newWidget) {
+    public int createWidget(@PathVariable("tid") Integer topicId, 
+    @RequestBody Widget newWidget) {
         return widgetService.createWidget(topicId, newWidget);
     }
 
