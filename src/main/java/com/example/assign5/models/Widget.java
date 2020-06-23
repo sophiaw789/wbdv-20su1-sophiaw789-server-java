@@ -18,6 +18,7 @@ public class Widget {
     private String url;
     private Integer width;
     private Integer height;
+    private String ordering;
 
     @ManyToOne
     @JsonIgnore
@@ -33,6 +34,7 @@ public class Widget {
         this.url = widget.url;
         this.width = widget.width;
         this.height = widget.height;
+        this.ordering = widget.ordering;
         this.topic = widget.topic;    
     }
 
@@ -114,5 +116,13 @@ public class Widget {
 
     public void setHeight(Integer height) {
         this.height = height;
+    }
+
+    public String getOrdering() {
+        return ordering;
+    }
+
+    public void setOrdering(String ordering) {
+        this.ordering = ordering;
     }
 }
