@@ -15,7 +15,6 @@ public class WidgetService {
     @Autowired
     WidgetRepository repository;
     TopicRepository topicRepository;
-    TopicService topicService;
 
     List<Widget> widgets = new ArrayList<Widget>();
     {
@@ -49,7 +48,7 @@ public class WidgetService {
      */
 
     public Widget createWidget(Integer tid, Widget newWidget) {
-        Topic topic = topicService.findTopicById(tid);
+        Topic topic = topicRepository.findTopicById(tid);
         newWidget.setTopic(topic);
         return repository.save(newWidget);
     }
