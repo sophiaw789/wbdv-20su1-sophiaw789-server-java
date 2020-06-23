@@ -17,7 +17,6 @@ public class WidgetService {
     TopicRepository topicRepository;
     TopicService topicService;
 
-
     List<Widget> widgets = new ArrayList<Widget>();
     {
     }
@@ -49,15 +48,10 @@ public class WidgetService {
      * newWidget; }
      */
 
-    public int createWidget(Integer tid, Widget newWidget) {
+    public Widget createWidget(Integer tid, Widget newWidget) {
         Topic topic = topicService.findTopicById(tid);
         newWidget.setTopic(topic);
-        try {
-            repository.save(newWidget);
-        } catch (Exception e) {
-            return 0;
-        }
-        return 1;
+        return repository.save(newWidget);
     }
 
     public int updateWidget(Integer widgetId, Widget updatedWidget) {
