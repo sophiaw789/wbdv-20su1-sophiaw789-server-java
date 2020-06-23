@@ -1,7 +1,10 @@
 package com.example.assign5.services;
 
 import com.example.assign5.models.Topic;
+import com.example.assign5.models.Widget;
 import com.example.assign5.repositories.TopicRepository;
+import com.example.assign5.repositories.WidgetRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +15,10 @@ import java.util.List;
 public class TopicService {
     @Autowired
     TopicRepository repository;
+    @Autowired
+    WidgetRepository widgetRepository;
+    @Autowired
+    WidgetService service;
 
     public Topic createTopic(String lid, Topic topic) {
         topic.setLessonId(lid);
@@ -19,6 +26,10 @@ public class TopicService {
     }
 
     public int deleteTopic(int tid) {
+        List<Widget> widgets = widgetRepository.findWidgetsForTopic(tid);
+        for (Widget w : widgets) {
+            service.deleteWidget(w.getId());
+        }
         try {
             repository.deleteById(tid);
         } catch (Exception e) {
