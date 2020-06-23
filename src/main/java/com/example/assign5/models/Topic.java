@@ -17,6 +17,7 @@ public class Topic {
     private List<Widget> widgets;
 
     public void set(Topic topic) {
+        this.id = topic.id;
         this.title = topic.title;
         this.description = topic.description;
         this.lessonId = topic.lessonId;

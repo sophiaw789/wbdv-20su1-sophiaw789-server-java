@@ -17,10 +17,6 @@ public class WidgetService {
     @Autowired
     TopicRepository topicRepository;
 
-    List<Widget> widgets = new ArrayList<Widget>();
-    {
-    }
-
     public List<Widget> findWidgetsForTopic(Integer tid) {
         return repository.findWidgetsForTopic(tid);
     }
